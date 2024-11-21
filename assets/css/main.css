@@ -2569,8 +2569,12 @@ input, select, textarea {
 	}
 
 		.image img {
+			width: auto; /* Maintain aspect ratio */
+			height: 100%; /* Fill the container vertically */
+			object-fit: contain; /* Ensure the entire image is visible */
+			object-position: center; /* Center the image */
+			display: block; /* Prevent extra inline space from images */
 			border-radius: 0.25em;
-			display: block;
 		}
 
 		.image.left, .image.right {
@@ -2609,8 +2613,29 @@ input, select, textarea {
 			width: 100%;
 		}
 
-			.image.main img {
-				width: 100%;
+		.image.text-container {
+			display: flex; /* Align items side by side */
+			align-items: center; /* Vertically center the text to the image */
+			gap: 20px; /* Add spacing between the image and text */
+		}
+		
+			.image.text-container .image {
+				max-width: 40%; 
+			}
+
+			.image.text-container .image img {
+				display: block; /* Removes extra space below the image */
+				width: 100%; /* Ensures the image scales within its container */
+				height: auto; /* Maintain aspect ratio */
+				margin: 0;
+			}
+		
+			.image.text-container .text {
+				flex: 1; /* Allows the text to take up the remaining space */
+    			text-align: left; 
+				margin: 0; 
+				margin-bottom: 0px;
+				padding: 0;
 			}
 
 /* List */
