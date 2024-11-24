@@ -2562,6 +2562,8 @@ input, select, textarea {
 /* Image */
 
 	.image {
+		display: flex;
+		justify-content: center;
 		border-radius: 0.25em;
 		border: 0;
 		display: inline-block;
@@ -2729,7 +2731,7 @@ input, select, textarea {
 		}
 
 			ul.actions.stacked li {
-				padding: 1.3em 0 0 0;
+				padding: 1em 0 0 0;
 			}
 
 				ul.actions.stacked li:first-child {
@@ -2738,6 +2740,10 @@ input, select, textarea {
 
 		ul.actions.fit {
 			width: calc(100% + 1em);
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-evenly;
+			list-style: none;
 		}
 
 			ul.actions.fit li {
@@ -2748,8 +2754,9 @@ input, select, textarea {
 				-moz-flex-shrink: 1;
 				-webkit-flex-shrink: 1;
 				-ms-flex-shrink: 1;
+				flex: 1 0 20%;
 				flex-shrink: 1;
-				width: 100%;
+				margin: 0.25em;
 			}
 
 				ul.actions.fit li > * {
